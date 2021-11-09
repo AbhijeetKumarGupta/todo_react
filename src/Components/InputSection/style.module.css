@@ -1,0 +1,22 @@
+#inputForm {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 50%;
+}
+#text_box {
+  padding: 10px;
+  width: 50%;
+}
+#addButton {
+  text-align: center;
+  padding: 10px;
+  background-color: transparent;
+  border: 2px solid black;
+  margin-left: 5px;
+  width: 10%;
+  min-width: 50px;
+  cursor: pointer;
+}

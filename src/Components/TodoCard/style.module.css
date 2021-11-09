@@ -1,0 +1,24 @@
+.todoCard {
+  display: flex;
+  border-radius: 10px;
+  width: 50%;
+  background-color: #4b9cd3;
+  color: white;
+  height: 100px;
+  padding: 10px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.todoMessageDiv {
+  width: 95%;
+  margin-top: 5%;
+}
+
+.closeButtonDiv {
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  width: 5%;
+  text-align: center;
+  cursor: pointer;
+}
