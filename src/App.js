@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setTodoData } from "./Redux/Actions";
+
+import InputSection from "./Components/InputSection";
+import CardSection from "./Components/CardSection";
+
+import "./App.css";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    fetch(`https://jsonplaceholder.typicode.com/todos`)
+      .then((res) => res.json())
+      .then((result) => {
+        handleSetTodoData(result);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  const handleSetTodoData = (data) => {
+    dispatch(setTodoData(data));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="mainDiv">
+      <InputSection />
+      <CardSection />
     </div>
   );
 }
