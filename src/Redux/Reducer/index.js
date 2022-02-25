@@ -7,19 +7,16 @@ const setState = (state = initialState, { type, payload }) => {
     case "SET-TODO-DATA":
       return { ...state, todoData: payload };
     case "REMOVE-DATA-FROM-LIST":
-      var filteredData = [];
-      for (var i = 0; i < state.todoData.length; i++) {
-        if (parseInt(state.todoData[i].id) !== parseInt(payload)) {
-          filteredData.push(state.todoData[i]);
-        }
-      }
-      console.log(filteredData[0].id, payload);
-      return { ...state, todoData: filteredData };
+      return {
+        ...state,
+        todoData: state.todoData.filter(
+          (item) => parseInt(item.id) !== parseInt(payload)
+        ),
+      };
     case "ADD-DATA-TO-LIST":
-      var newDataList = state.todoData;
-      newDataList.push(payload);
-      console.log(newDataList);
-      return { ...state, todoData: newDataList };
+      return state.todoData.length > 0
+        ? { ...state, todoData: [payload, ...state.todoData] }
+        : { ...state, todoData: [payload] };
 
     default:
       return state;
