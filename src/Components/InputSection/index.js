@@ -1,7 +1,8 @@
-import styles from "./style.module.css";
 import React, { useState } from "react";
 import { addTodoData } from "../../Redux/Actions";
 import { useDispatch } from "react-redux";
+
+import styles from "./style.module.css";
 
 const InputSection = () => {
   const dispatch = useDispatch();

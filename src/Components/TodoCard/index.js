@@ -1,6 +1,8 @@
-import styles from "./style.module.css";
 import { useDispatch } from "react-redux";
 import { removeDataFromTodo } from "../../Redux/Actions";
+
+import styles from "./style.module.css";
+
 const Card = (props) => {
   const dispatch = useDispatch();
 

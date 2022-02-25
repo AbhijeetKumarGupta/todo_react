@@ -5,9 +5,8 @@ const CardSection = () => {
   const todoData = useSelector((state) => state.todoData);
   return (
     <>
-      {todoData.map((item, index) => (
-        <Card key={item.id} data={item} />
-      ))}
+      {todoData.length > 0 &&
+        todoData.map((item, index) => <Card key={item.id} data={item} />)}
     </>
   );
 };

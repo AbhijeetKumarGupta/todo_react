@@ -1,10 +1,11 @@
-import "./App.css";
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setTodoData } from "./Redux/Actions";
 
 import InputSection from "./Components/InputSection";
 import CardSection from "./Components/CardSection";
+
+import "./App.css";
 
 function App() {
   const dispatch = useDispatch();
@@ -14,6 +15,9 @@ function App() {
       .then((res) => res.json())
       .then((result) => {
         handleSetTodoData(result);
+      })
+      .catch((err) => {
+        console.log(err);
       });
   }, []);
 
